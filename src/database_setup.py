@@ -35,7 +35,8 @@ def stream_jsonl(filename):
 print("\n--- Populating Database ---")
 print("Could take a moment depending on the size of the dataset and your machine's capabilities...")
 
-table.add(list(stream_jsonl("../companies.jsonl")))
+company_jsonl_path = "../companies.jsonl" # modify to the path to your JSONL file
+table.add(list(stream_jsonl(company_jsonl_path)))
 print("Data added to the database.")
 
 print("Creating index for cosine similarity search...")

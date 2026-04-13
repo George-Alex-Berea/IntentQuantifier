@@ -23,10 +23,10 @@ while True:
     {{
         "website": "",
         "operational_name": "",
-        "year_founded": 2026,
+        "year_founded": "",
         "address": "",
-        "employee_count": null,
-        "revenue": 0.0,
+        "employee_count": "",
+        "revenue": "",
         "primary_naics": "",
         "description": "",
         "business_model": [],
@@ -50,11 +50,14 @@ while True:
     Other fields should be filled in with plausible values based on the description, 
     or be left uncompletted if there is no plausible value.
     """
-    
-    response = client.models.generate_content(
-        model="gemini-2.5-flash", 
-        contents=prompt
-    )
+    try:
+        response = client.models.generate_content(
+            model="gemini-2.5-flash", 
+            contents=prompt
+        )
+    except Exception as e:
+        print(f"Error generating company description: {e}")
+        continue
     
     target_description = response.text.strip()
     print(f"\nPowerfull LLM description:\n{target_description}")
