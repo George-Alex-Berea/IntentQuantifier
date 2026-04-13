@@ -2,6 +2,7 @@ import lancedb
 from google import genai
 import json
 
+# Load API key and initialize GenAI client. The API key should be provided by each user in a file named ".api_key.txt" in the same directory as this script.
 with open(".api_key.txt", "r") as f:
     api_key = f.read().strip()
 client = genai.Client(api_key=api_key)

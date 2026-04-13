@@ -35,7 +35,7 @@ def stream_jsonl(filename):
 print("\n--- Populating Database ---")
 print("Could take a moment depending on the size of the dataset and your machine's capabilities...")
 
-company_jsonl_path = "../companies.jsonl" # modify to the path to your JSONL file
+company_jsonl_path = input("Enter the path to the company descriptions JSONL file: ")
 table.add(list(stream_jsonl(company_jsonl_path)))
 print("Data added to the database.")
 
