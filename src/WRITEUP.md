@@ -58,3 +58,7 @@ This automatically clusters simmilar entries so each query will only search the 
 The largest failure point is the powerfull LLM. A mistakenly generated description is enough to ruin the query entirely, and the chance of this happening is larger the more ambiguous the clients request is.
 
 The incorrect results appear to be strongly correlated to low scores (large cosine distances for even the best matches), so the best approach would be to monitor these scenarios in production and work out a solution based on the data.
+
+# Other notes
+* Currently all the embeddings are recalculated if even one changes. This should be changed for effective scaling.
+* This is currently a console application. For real clients a UI should be built, so the users can easily interact with the app, however this was not implemented because I considered it to be beyond the scope of this project.
